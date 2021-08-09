@@ -108,7 +108,13 @@ nmap --script=ftp-anon 10.10.10.10 -p21 -v\
 nmap -A -p21 10.10.10.10 -v
 
 **Login to FTP server**\
-ftp 10.10.10.10
+ftp 10.10.10.10\
+
+## FTP server Commands 
+get filename\
+put filename\
+cd /../..\
+ls /..
 
 ## Meterpreter
 ps\
