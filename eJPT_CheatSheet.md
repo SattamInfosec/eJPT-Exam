@@ -1,9 +1,9 @@
-# eJPT-Cheatsheet
-This is a Cheatsheet for eJPT exam + course.
+# eJPT_Cheatsheet
+This is a Cheatsheet for eJPT Exam + Course.
 
 ## Nmap
-nmap -sn 10.10.10.0/24\                     
-nmap -sV -p- -iL targetIP -oN nmap.initial -v\                                        nmap -A -p- -iL targetIP -oN nmap.aggressive -v\
+nmap -sn 10.10.10.0/24                     
+nmap -sV -p- -iL targetIP -oN nmap.initial -v                                        nmap -A -p- -iL targetIP -oN nmap.aggressive -v
 nmap -p<port> --script=vuln -v <target-IP>   
 
 ## fPing
