@@ -111,10 +111,10 @@ nmap -A -p21 10.10.10.10 -v
 ftp 10.10.10.10\
 
 ## FTP server Commands 
-get filename\
-put filename\
-cd /../..\
-ls /..
+get filename > to Receive file\
+put filename > to upload file \
+cd /../.. > to Change remote working directory\
+ls /.. > tp List contents of remote directory
 
 ## Meterpreter
 ps\
