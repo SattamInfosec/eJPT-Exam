@@ -1,26 +1,30 @@
 # eJPT-Cheatsheet
-This is a Cheatsheet for eJPT exam + course.
+This is a Cheatsheet for eJPT Exam & Course.
 
 ## Nmap
-nmap -sn 10.10.10.0/24\
-nmap -sV -p- -iL targets -oN nmap.initial -v\
+```sh
+nmap -sn 10.10.10.0/24\                              #Host Discover
+nmap -sV -p- -iL targets -oN nmap.initial -v\ 
 nmap -A -p- -iL targets -oN nmap.aggressive -v\
-nmap -p<port> --script=vuln -v <target-IP>
-
+nmap -p<port> --script=vuln -v <target-IP>           #Vulnerabillity Assessment
+```
 ## fPing
-fping -a -g 10.10.10.0/24 2>/dev/null > targets
-
+```sh
+fping -a -g 10.10.10.0/24 2>/dev/null > targets       #Host Discover
+``` 
 ## IP Route
 **Syntax**\
 ip route add \<Network-range\> via \<router-IP\> dev \<interface\>\
 eg.\
+```sh
 ip route add 10.10.10.0/24 via 10.10.11.1 dev tap0
-
+```
 ## John
+```sh
 john --wordlist=/usr/share/wordlists/rockyou.txt --format=raw-md5\
 unshadow passwd shadow > unshadowed.txt\
 john --wordlist=/usr/share/wordlists/rockyou.txt unshadowed.txt
-
+```
 ## dirb
 dirb http://10.10.10.10/ \
 dirb http://10.10.10.10/dir -u admin:admin
