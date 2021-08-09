@@ -27,11 +27,9 @@ john --wordlist=/usr/share/wordlists/rockyou.txt --format=raw-md5\
 unshadow passwd shadow > unshadowed.txt\
 john --wordlist=/usr/share/wordlists/rockyou.txt unshadowed.txt
 ```
-## dirb
-dirb http://10.10.10.10/ \
-dirb http://10.10.10.10/dir -u admin:admin
+## dirbuster
+![alt text](https://github.com/SattamInfosec/SattamInfosec/blob/main/Dirbuster.PNG)
 
-*I suggest you to use dirbuster for better speed. Keep the threads at 20. Use /usr/share/wordlists/dirb/common.txt wordlist.*
 
 ## Netcat
 **Listening for reverse shell**\
