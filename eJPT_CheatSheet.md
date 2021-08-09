@@ -2,11 +2,10 @@
 This is a Cheatsheet for eJPT exam + course.
 
 ## Nmap
-nmap -sn 10.10.10.0/24\                      > "Host Discover"
-nmap -sV -p- -iL targets -oN nmap.initial -v\           
-                                                 > "Scanning"
-nmap -A -p- -iL targets -oN nmap.aggressive -v\
-nmap -p<port> --script=vuln -v <target-IP>   > "Vulnerability Assessment"
+nmap -sn 10.10.10.0/24\                     
+nmap -sV -p- -iL <target-IP> -oN nmap.initial -v\                                        nmap -A -p- -iL <target-IP> -oN nmap.aggressive -v\
+Best scan nmap -sV -sC -T4 <target-IP>
+nmap -p<port> --script=vuln -v <target-IP>   
 
 ## fPing
 fping -a -g 10.10.10.0/24 2>/dev/null > targets
