@@ -18,6 +18,8 @@ ip route add \<Network-range\> via \<router-IP\> dev \<interface\>\
 eg.\
 ```sh
 ip route add 10.10.10.0/24 via 10.10.11.1 dev tap0
+
+route         #To Check
 ```
 ## John
 ```sh
