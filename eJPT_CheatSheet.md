@@ -3,8 +3,7 @@ This is a Cheatsheet for eJPT exam + course.
 
 ## Nmap
 nmap -sn 10.10.10.0/24\                     
-nmap -sV -p- -iL <target-IP> -oN nmap.initial -v\                                        nmap -A -p- -iL <target-IP> -oN nmap.aggressive -v\
-Best scan nmap -sV -sC -T4 <target-IP>
+nmap -sV -p- -iL targetIP -oN nmap.initial -v\                                        nmap -A -p- -iL targetIP -oN nmap.aggressive -v\
 nmap -p<port> --script=vuln -v <target-IP>   
 
 ## fPing
