@@ -10,7 +10,7 @@ nmap -p<port> --script=vuln 10.10.10.10           #Vulnerabillity Assessment
 ```
 ## fPing
 ```sh
-fping -a -g 10.10.10.0/24 2>/dev/null > targets       #Host Discover
+fping -a -g 10.10.10.0/24 2>/dev/null            #Host Discover
 ``` 
 ## IP Route
 **Syntax**\
@@ -24,25 +24,25 @@ route print     # Checking defined routes in windows
 ```
 ## Networking Commands
 
-**Finding for IP Address and Mac Address**\
+**Finding for IP Address and Mac Address**
 ```sh
 ipconfig /all       #Windows
-ifconfig        #linux 
+ifconfig            #linux 
 ```
-**Checking specific host **\
+**Checking Specific Host**
 ```sh
 ping 10.10.10.10     #allow a user to test and verify if a destination IP Address exists 
 ```
 
-**Checking for  ARP Tables**\
+**Checking for ARP Tables**
 ```sh
 arp -a               #To show ARP Tables Windows 
 ip neighbour         #ARP Tables Linux
 ```
-**Checking for  Listening Ports on a Machine**\
+**Checking for Listening Ports on a Machine**
 ```sh
 netstat -ano        #Windows
-netstat -tlunp       #linux           
+netstat -tlunp      #linux           
 ```
 ## John
 ```sh
@@ -59,16 +59,16 @@ john --wordlist=/usr/share/wordlists/rockyou.txt unshadowed.txt
 ```sh
 gobuster dir -u http://example.com -w /usr/usr/wordlists/dirb/common.txt 
 
-gobuster dir -u http://example.com -w /usr/usr/wordlists/dirb/common.txt -s 302
+gobuster dir -u http://example.com -w /usr/usr/wordlists/dirb/common.txt -x php 
 ```
 
 
 ## Netcat
-**Listening for reverse shell**\
+**Listening for reverse shell**
 ```sh
 nc -nvlp 1234
 ```
-**Banner Grabbing**\
+**Banner Grabbing**
 ```sh
 nc -nv 10.10.10.10 \<port\>
 ```
@@ -99,14 +99,14 @@ sqlmap -u "http://10.10.10.10/login.php" --data="user=admin&password=admin" -D d
 ```
 
 ## Hydra
-**SSH & FTP Login Bruteforcing**\
+**SSH & FTP Login Bruteforcing**
 ```sh
 hydra -L userslist -P passwordslist ftp://10.10.10.10
 hydra -l root -P passwordslist ssh://10.10.10.10 
 hydra -L userlist -p password123 ftp://10.10.10.10
 ```sh
 
-**HTTP POST Form**\
+**HTTP POST Form**
 ```sh
 hydra http://10.10.10.10/ http-post-form "/login.php:user=^USER^&password=^PASS^:Incorrect credentials" -L usernames.txt -P passwords.txt -f -V
 ```
@@ -219,8 +219,7 @@ type       #it's the same as 'cat' command in linux
 **Check Users**
 ```sh
 net users         #Users in windows 
-cat /etc/passwd   #Users in linux 
-net account       #Password age 
+cat /etc/passwd   #Users in linux  
 ```
 
 **List drives on the machine**
