@@ -225,7 +225,7 @@ cat /etc/passwd   #Users in linux
 **List drives on the machine**
 ```sh
 fsutil fsinfo drives     #windows 
-lsblk -l                #Linux
+lsblk -l                 #Linux
 ```
 
 
