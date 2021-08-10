@@ -217,7 +217,7 @@ exploit(windows/smb/ms17_010_psexec)> run
 ```
 **After PrivEsc**
 ```sh
-migrate \<pid\>   
+migrate </pid\>   
 hashdump          #to extract Users & Password's hash
 ``` 
 ## Windows Command Line
