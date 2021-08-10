@@ -18,8 +18,8 @@ ip route add \<Network-range\> via \<router-IP\> dev \<interface\>
 ```sh
 ip route add 10.10.10.0/24 via 10.10.11.1 dev tap0
 
-ip route    # Checking defined routes in linux
-route       # Checking defined routes in linux
+ip route        # Checking defined routes in linux
+route           # Checking defined routes in linux
 route print     # Checking defined routes in windows
 ```
 ## Networking Commands
@@ -46,11 +46,11 @@ netstat -tlunp      #linux
 ```
 ## John
 ```sh
-john --wordlist=/usr/share/wordlists/rockyou.txt --format=raw-md5\
+john --wordlist=/usr/share/wordlists/rockyou.txt --format=raw-md5
 unshadow passwd shadow > unshadowed.txt\
 john --wordlist=/usr/share/wordlists/rockyou.txt unshadowed.txt
 ```
-## dirbuster
+## Dirbuster
 
 ![alt text](https://github.com/SattamInfosec/SattamInfosec/blob/main/Dirbuster.PNG)
 
