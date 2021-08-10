@@ -205,7 +205,7 @@ migrate \<pid\>
 hashdump          #to extract Users & Password's hash
 ``` 
 ## Windows Command Line
-**To search for a file starting from current directory**
+**To search for files and Folders**
 ```sh
 dir /b/s "\*.conf\*"
 dir /b/s "\*.txt\*"
