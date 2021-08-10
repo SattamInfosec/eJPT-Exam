@@ -128,7 +128,7 @@ run autoroute -s 10.10.10.0/24
 echo 1 > /proc/sys/net/ipv4/ip_forward\
 arpspoof -i <interface> -t <target> -r <host>\
 arpspoof -i tap0 -t 10.100.13.37 -r 10.100.13.36
-```sh
+```
 ## SMB Enumeration
 **Get shares, users, groups, password policy**\
 ```sh
