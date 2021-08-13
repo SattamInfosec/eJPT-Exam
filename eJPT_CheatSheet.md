@@ -195,7 +195,7 @@ put filename               #to upload file
 cd /../..                  #to Change remote working directory
 ls /..                     #to List contents of remote directory
 ```
-## Metasploit Project
+## Metasploit Freamwork
 ```sh
 msfconsole                        #To run the Freamwork
 search <Exploit_Module>           #Search for a specific module 
