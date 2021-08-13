@@ -239,7 +239,7 @@ exploit(windows/smb/ms17_010_psexec)> run
 **After PrivEsc**
 ```sh
 migrate </pid\>   
-hashdump          #to extract Users & Password's hash
+hashdump          #To extract the hash Passwords and Users  
 ``` 
 ## Windows Command Line
 **To search for files and Folders**
@@ -249,7 +249,7 @@ dir /b/s "\*.txt\*"
 dir /b/s "\*filename\*"
 cd         #it's the same as 'pwd' command in linux
 type       #it's the same as 'cat' command in linux
-systeminfo #information about the Operating System
+systeminfo         #information about the Operating System
 ```
 
 
