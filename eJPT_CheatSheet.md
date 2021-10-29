@@ -1,9 +1,9 @@
-### Twiter : @SopLills        
+#### Twiter : https://twitter.com/SopLills       
 
-### linkedin : https://www.linkedin.com/in/sattam-almohsen/
+#### linkedin : https://www.linkedin.com/in/sattam-almohsen/
 
-### Youtube : https://www.youtube.com/channel/UCLHbnIG05-F5xw6kvNt47nQ 
-
+#### Youtube : https://www.youtube.com/channel/UCLHbnIG05-F5xw6kvNt47nQ 
+--------------------------------------------------------------------------------------------------
 # eJPT-Cheatsheet            
 This is a Cheatsheet for eJPT Exam & Course.
 
