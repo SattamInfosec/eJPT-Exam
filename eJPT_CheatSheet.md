@@ -130,7 +130,7 @@ hydra http://10.10.10.10/ http-post-form "/login.php:user=^USER^&password=^PASS^
 
 ## Password Cracking 
 
-#### To extract the Users with Hash Passwords form OS 
+#### To extract the Users with Hashes Password form OS 
 ```sh
 hashdump                #Windows (meterpreter)
 
